@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import sameerPortrait from './sameer_portrait.jpg';
 
 export default function App() {
   useEffect(() => {
@@ -179,7 +180,7 @@ export default function App() {
             <div className="photo-container">
               <div className="photo-glow-ring"></div>
               <div className="photo-border">
-                <img src="sameer_portrait.png" alt="Sameer Kumar Joshi" className="photo-img" id="heroPhoto" />
+                <img src={`${sameerPortrait}?v=1`} alt="Sameer Kumar Joshi" className="photo-img" id="heroPhoto" />
               </div>
               <div className="photo-float-tag tag1">
                 <span className="tag-icon">⚡</span>
