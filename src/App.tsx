@@ -398,6 +398,29 @@ export default function App() {
 
         <div className="projects-grid">
           <div className="project-card reveal">
+            <div className="project-emoji">🪔✨</div>
+            <div className="project-title">GitaDaily</div>
+            <div className="project-goal">Goal: Daily spiritual companion and AI guidance</div>
+            <p className="project-desc">
+              A premium, full-stack reflection platform delivering daily Bhagavad Gita verses and AI reflections at 6:00 AM. 
+              Features the flagship "Seek Divine Guidance" module, allowing users to input modern life challenges or emotional states 
+              and receive personalized spiritual counsel matched to relevant ancient shlokas in English, Hindi, Kannada, or Telugu.
+            </p>
+            <div className="project-tech">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>TypeScript</span>
+              <span>Gemini API</span>
+              <span>EmailJS</span>
+              <span>Web Push</span>
+            </div>
+            <a href="https://github.com/SameerJoshi7/GitaDaily" target="_blank" className="project-link" id="gitaDailyGithub">
+              View on GitHub &rarr;
+            </a>
+          </div>
+
+          <div className="project-card reveal" style={{ transitionDelay: '0.1s' }}>
             <div className="project-emoji">✋✨</div>
             <div className="project-title">Glow Finger Draw</div>
             <div className="project-goal">Goal: Hands-free creative canvas</div>
@@ -418,7 +441,7 @@ export default function App() {
             </a>
           </div>
 
-          <div className="project-card reveal" style={{ transitionDelay: '0.15s' }}>
+          <div className="project-card reveal" style={{ transitionDelay: '0.2s' }}>
             <div className="project-emoji">🤖💌</div>
             <div className="project-title">FutureMe AI</div>
             <div className="project-goal">Goal: AI-powered self-reflection journal</div>
