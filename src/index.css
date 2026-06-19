@@ -949,6 +949,12 @@ section {
   color: var(--violet-soft);
 }
 
+.project-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
 .project-link {
   display: inline-flex;
   align-items: center;

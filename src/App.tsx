@@ -415,9 +415,14 @@ export default function App() {
               <span>EmailJS</span>
               <span>Web Push</span>
             </div>
-            <a href="https://github.com/SameerJoshi7/GitaDaily" target="_blank" className="project-link" id="gitaDailyGithub">
-              View on GitHub &rarr;
-            </a>
+            <div className="project-links">
+              <a href="https://github.com/SameerJoshi7/GitaDaily" target="_blank" className="project-link" id="gitaDailyGithub">
+                View Repo &rarr;
+              </a>
+              <a href="https://gitadaily.vercel.app" target="_blank" className="project-link" id="gitaDailyApp">
+                Launch App &rarr;
+              </a>
+            </div>
           </div>
 
           <div className="project-card reveal" style={{ transitionDelay: '0.1s' }}>
