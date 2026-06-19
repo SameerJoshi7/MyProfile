@@ -441,9 +441,14 @@ export default function App() {
               <span>Canvas API</span>
               <span>Vite</span>
             </div>
-            <a href="https://github.com/SameerJoshi7/glow-finger-draw" target="_blank" className="project-link" id="glowFingerDrawGithub">
-              View on GitHub &rarr;
-            </a>
+            <div className="project-links">
+              <a href="https://github.com/SameerJoshi7/glow-finger-draw" target="_blank" className="project-link" id="glowFingerDrawGithub">
+                View Repo &rarr;
+              </a>
+              <a href="https://SameerJoshi7.github.io/glow-finger-draw/" target="_blank" className="project-link" id="glowFingerDrawApp">
+                Launch App &rarr;
+              </a>
+            </div>
           </div>
 
           <div className="project-card reveal" style={{ transitionDelay: '0.2s' }}>
