@@ -228,7 +228,7 @@ export default function App() {
                 architecting micro-services.
               </p>
               <p>
-                When I'm not writing code, I'm probably somewhere in the mountains or exploring new places 🏔️.
+                When I'm not writing code, I love bringing my creative ideas to life, playing or watching cricket 🏏, and capturing moments through photography — check out my shots on Instagram at <a href="https://instagram.com/sameer.joshi." target="_blank" style={{ color: 'var(--cyan)', textDecoration: 'none' }} id="instagramLink">@sameer.joshi.</a>. I'm also always up for heading to the mountains or exploring new places 🏔️.
               </p>
             </div>
             <div className="about-langs">
