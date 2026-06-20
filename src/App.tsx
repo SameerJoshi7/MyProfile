@@ -434,11 +434,13 @@ export default function App() {
           <div className="project-card reveal">
             <div className="project-emoji screen-only">🪔✨</div>
             <div className="project-title">Krishna Bodha</div>
-            <div className="project-goal screen-only">Goal: Daily spiritual companion and AI guidance</div>
+            <div className="project-goal screen-only">Goal: Immersive daily Gita wisdom &amp; AI guidance</div>
             <p className="project-desc">
-              A premium, full-stack reflection platform delivering daily Bhagavad Gita verses and AI reflections at 6:00 AM. 
-              Features the flagship "Seek Divine Guidance" module, allowing users to input modern life challenges or emotional states 
-              and receive personalized spiritual counsel matched to relevant ancient shlokas in English, Hindi, Kannada, or Telugu.
+              A premium, full-stack spiritual companion delivering daily Bhagavad Gita shlokas and AI reflections at 6:00 AM. 
+              Features the flagship "Seek Divine Guidance" module, which matches modern life challenges or emotional states 
+              to ancient wisdom with personalized AI counseling in English, Hindi, Kannada, or Telugu. Includes an immersive 
+              floating glassmorphic classical flute player, deep-linked verse routing, and multi-channel broadcasts via email 
+              and web push notifications.
             </p>
             <div className="project-tech">
               <span>React</span>
