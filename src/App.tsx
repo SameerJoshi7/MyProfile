@@ -433,7 +433,7 @@ export default function App() {
         <div className="projects-grid">
           <div className="project-card reveal">
             <div className="project-emoji screen-only">🪔✨</div>
-            <div className="project-title">GitaDaily</div>
+            <div className="project-title">Krishna Bodha</div>
             <div className="project-goal screen-only">Goal: Daily spiritual companion and AI guidance</div>
             <p className="project-desc">
               A premium, full-stack reflection platform delivering daily Bhagavad Gita verses and AI reflections at 6:00 AM. 
