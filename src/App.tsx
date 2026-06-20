@@ -129,6 +129,20 @@ export default function App() {
       <div className="cursor-dot" id="cursorDot"></div>
       <div className="cursor-ring" id="cursorRing"></div>
 
+      {/* Print Header */}
+      <div className="print-only print-header">
+        <div className="print-header-top">
+          <h1 className="print-name">Sameer Kumar Joshi</h1>
+          <div className="print-title">Senior Full-Stack Developer</div>
+        </div>
+        <div className="print-contact">
+          <span className="print-contact-item">📧 sameerkumarjoshi7@gmail.com</span>
+          <span className="print-contact-item">📱 +91 90328 03010</span>
+          <span className="print-contact-item">💼 linkedin.com/in/sameer-joshi-7</span>
+          <span className="print-contact-item">📍 Bengaluru, India</span>
+        </div>
+      </div>
+
       {/* Navigation */}
       <nav id="navbar">
         <div className="nav-logo">SJ</div>
@@ -139,6 +153,11 @@ export default function App() {
           <li><a href="#projects">Projects</a></li>
           <li><a href="#achievements">Awards</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li>
+            <button onClick={() => window.print()} className="nav-pdf-btn" id="downloadPdfNav">
+              PDF Resume
+            </button>
+          </li>
         </ul>
       </nav>
 
@@ -170,6 +189,9 @@ export default function App() {
               <a href="#experience" className="btn btn-primary" id="viewWorkBtn">
                 ✦ View My Work
               </a>
+              <button onClick={() => window.print()} className="btn btn-secondary btn-pdf" id="downloadPdfHero">
+                📄 Resume PDF
+              </button>
               <a href="#contact" className="btn btn-secondary" id="contactBtn">
                 Say Hello 👋
               </a>
@@ -211,8 +233,11 @@ export default function App() {
       {/* About Section */}
       <section id="about">
         <div className="reveal">
-          <div className="section-label">Who I Am</div>
-          <h2 className="section-title">A developer who <span>loves the craft</span></h2>
+          <div className="section-label screen-only">Who I Am</div>
+          <h2 className="section-title">
+            <span className="screen-only">A developer who <span>loves the craft</span></span>
+            <span className="print-only">Professional Summary</span>
+          </h2>
         </div>
         <div className="about-grid">
           <div className="reveal">
@@ -228,7 +253,7 @@ export default function App() {
                 architecting micro-services.
               </p>
               <p>
-                When I'm not writing code, I love bringing my creative ideas to life, playing or watching cricket 🏏, and capturing moments through photography — check out my shots on Instagram at <a href="https://instagram.com/sameer.joshi" target="_blank" style={{ color: 'var(--cyan)', textDecoration: 'none' }} id="instagramLink">@sameer.joshi</a>. I'm also always up for heading to the mountains or exploring new places 🏔️.
+                When I'm not writing code, I love bringing my creative ideas to life, playing or watching cricket 🏏, and capturing moments through photography<span className="screen-only"> — check out my shots on Instagram at <a href="https://instagram.com/sameer.joshi" target="_blank" style={{ color: 'var(--cyan)', textDecoration: 'none' }} id="instagramLink">@sameer.joshi</a></span>. I'm also always up for heading to the mountains or exploring new places 🏔️.
               </p>
             </div>
             <div className="about-langs">
@@ -238,7 +263,7 @@ export default function App() {
               <div className="lang-pill"><span className="lang-flag">🇮🇳</span> Telugu</div>
             </div>
           </div>
-          <div className="about-stats reveal" style={{ transitionDelay: '0.15s' }}>
+          <div className="about-stats reveal screen-only" style={{ transitionDelay: '0.15s' }}>
             <div className="stat-card">
               <div className="stat-number">7+</div>
               <div className="stat-label">Years of Experience</div>
@@ -264,8 +289,11 @@ export default function App() {
       {/* Skills Section */}
       <section id="skills">
         <div className="reveal">
-          <div className="section-label">My Arsenal</div>
-          <h2 className="section-title">Skills &amp; <span>Technologies</span></h2>
+          <div className="section-label screen-only">My Arsenal</div>
+          <h2 className="section-title">
+            <span className="screen-only">Skills &amp; <span>Technologies</span></span>
+            <span className="print-only">Technical Skills</span>
+          </h2>
         </div>
         <div className="skills-grid">
           <div className="skill-group reveal">
@@ -312,8 +340,11 @@ export default function App() {
       {/* Experience Section */}
       <section id="experience">
         <div className="reveal">
-          <div className="section-label">My Journey</div>
-          <h2 className="section-title">Work <span>Experience</span></h2>
+          <div className="section-label screen-only">My Journey</div>
+          <h2 className="section-title">
+            <span className="screen-only">Work <span>Experience</span></span>
+            <span className="print-only">Professional Experience</span>
+          </h2>
         </div>
 
         <div className="timeline">
@@ -392,15 +423,18 @@ export default function App() {
       {/* Projects Section */}
       <section id="projects">
         <div className="reveal">
-          <div className="section-label">Side Hustles</div>
-          <h2 className="section-title">Personal <span>Projects</span></h2>
+          <div className="section-label screen-only">Side Hustles</div>
+          <h2 className="section-title">
+            <span className="screen-only">Personal <span>Projects</span></span>
+            <span className="print-only">Key Projects</span>
+          </h2>
         </div>
 
         <div className="projects-grid">
           <div className="project-card reveal">
-            <div className="project-emoji">🪔✨</div>
+            <div className="project-emoji screen-only">🪔✨</div>
             <div className="project-title">GitaDaily</div>
-            <div className="project-goal">Goal: Daily spiritual companion and AI guidance</div>
+            <div className="project-goal screen-only">Goal: Daily spiritual companion and AI guidance</div>
             <p className="project-desc">
               A premium, full-stack reflection platform delivering daily Bhagavad Gita verses and AI reflections at 6:00 AM. 
               Features the flagship "Seek Divine Guidance" module, allowing users to input modern life challenges or emotional states 
@@ -415,7 +449,7 @@ export default function App() {
               <span>EmailJS</span>
               <span>Web Push</span>
             </div>
-            <div className="project-links">
+            <div className="project-links screen-only">
               <a href="https://github.com/SameerJoshi7/GitaDaily" target="_blank" className="project-link" id="gitaDailyGithub">
                 View Repo &rarr;
               </a>
@@ -426,9 +460,9 @@ export default function App() {
           </div>
 
           <div className="project-card reveal" style={{ transitionDelay: '0.1s' }}>
-            <div className="project-emoji">✋✨</div>
+            <div className="project-emoji screen-only">✋✨</div>
             <div className="project-title">Glow Finger Draw</div>
-            <div className="project-goal">Goal: Hands-free creative canvas</div>
+            <div className="project-goal screen-only">Goal: Hands-free creative canvas</div>
             <p className="project-desc">
               A real-time, browser-based finger painting app that uses your webcam and hand-tracking (MediaPipe) to let you
               draw glowing trails in the air — no mouse, no touch, just your fingers. Supports multi-color selection, brush
@@ -441,7 +475,7 @@ export default function App() {
               <span>Canvas API</span>
               <span>Vite</span>
             </div>
-            <div className="project-links">
+            <div className="project-links screen-only">
               <a href="https://github.com/SameerJoshi7/glow-finger-draw" target="_blank" className="project-link" id="glowFingerDrawGithub">
                 View Repo &rarr;
               </a>
@@ -452,9 +486,9 @@ export default function App() {
           </div>
 
           <div className="project-card reveal" style={{ transitionDelay: '0.2s' }}>
-            <div className="project-emoji">🤖💌</div>
+            <div className="project-emoji screen-only">🤖💌</div>
             <div className="project-title">FutureMe AI</div>
-            <div className="project-goal">Goal: AI-powered self-reflection journal</div>
+            <div className="project-goal screen-only">Goal: AI-powered self-reflection journal</div>
             <p className="project-desc">
               A full-stack AI reflection app where you write letters to your future self and receive personalized,
               empathetic replies powered by the Gemini API. Features an interactive chat interface, a Node.js/Express
@@ -467,7 +501,7 @@ export default function App() {
               <span>Gemini API</span>
               <span>HTML/CSS/JS</span>
             </div>
-            <a href="https://github.com/SameerJoshi7/futureme" target="_blank" className="project-link" id="futureMeGithub">
+            <a href="https://github.com/SameerJoshi7/futureme" target="_blank" className="project-link screen-only" id="futureMeGithub">
               Coming Soon &rarr;
             </a>
           </div>
@@ -479,8 +513,11 @@ export default function App() {
       {/* Achievements Section */}
       <section id="achievements">
         <div className="reveal">
-          <div className="section-label">Recognition</div>
-          <h2 className="section-title">Awards &amp; <span>Achievements</span></h2>
+          <div className="section-label screen-only">Recognition</div>
+          <h2 className="section-title">
+            <span className="screen-only">Awards &amp; <span>Achievements</span></span>
+            <span className="print-only">Honors &amp; Achievements</span>
+          </h2>
         </div>
 
         <div className="achievements-grid">
