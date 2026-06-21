@@ -138,7 +138,7 @@ export default function App() {
         <div className="print-contact">
           <span className="print-contact-item">📧 sameerkumarjoshi7@gmail.com</span>
           <span className="print-contact-item">📱 +91 90328 03010</span>
-          <span className="print-contact-item">💼 linkedin.com/in/sameer-joshi-7</span>
+          <span className="print-contact-item">💼 <a href="https://www.linkedin.com/in/sameer-joshi-691457146/" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Sameer's LinkedIn</a></span>
           <span className="print-contact-item">📍 Bengaluru, India</span>
         </div>
       </div>
@@ -566,9 +566,9 @@ export default function App() {
               <span className="contact-link-icon">📱</span>
               +91 90328 03010
             </a>
-            <a href="https://www.linkedin.com/in/sameer-joshi-7" target="_blank" className="contact-link" id="linkedinLink">
+            <a href="https://www.linkedin.com/in/sameer-joshi-691457146/" target="_blank" className="contact-link" id="linkedinLink" rel="noreferrer">
               <span className="contact-link-icon">💼</span>
-              LinkedIn Profile
+              Sameer's LinkedIn
             </a>
           </div>
         </div>
