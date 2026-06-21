@@ -62,7 +62,7 @@ export default function App() {
     }
 
     // Typewriter effect
-    const words = ['React Apps 💻', 'Node.js APIs 🛠️', 'Full-Stack Magic ✨', 'Scalable Systems 🚀', 'Clean UIs 🎨'];
+    const words = ['Next.js & React Apps 💻', 'Node.js APIs 🛠️', 'Full-Stack Magic ✨', 'Scalable Systems 🚀', 'Clean UIs 🎨'];
     let wordIdx = 0, charIdx = 0, isDeleting = false;
     const tyEl = document.getElementById('typewriterText');
     let typeTimeout: number;
@@ -183,7 +183,7 @@ export default function App() {
             </div>
             <p className="hero-desc">
               Senior Full-Stack Developer with <strong>7+ years</strong> of experience crafting scalable web applications.
-              Specializing in React, TypeScript &amp; Node.js — turning complex ideas into elegant, performant products.
+              Specializing in React, Next.js, TypeScript &amp; Node.js — turning complex ideas into elegant, performant products.
             </p>
             <div className="hero-cta">
               <a href="#experience" className="btn btn-primary" id="viewWorkBtn">
@@ -248,7 +248,7 @@ export default function App() {
                 everything from finance wellness apps to machine learning platforms and retail fueling systems.
               </p>
               <p>
-                My sweet spot is the <strong>React + TypeScript + Node.js</strong> stack, but I'm equally
+                My sweet spot is the <strong>React + Next.js + TypeScript + Node.js</strong> stack, but I'm equally
                 comfortable diving into cloud infrastructure on AWS, wrangling PostgreSQL schemas, or
                 architecting micro-services.
               </p>
@@ -302,6 +302,7 @@ export default function App() {
               <span className="skill-chip">JavaScript</span>
               <span className="skill-chip">TypeScript</span>
               <span className="skill-chip">React</span>
+              <span className="skill-chip">Next.js</span>
               <span className="skill-chip">Redux</span>
               <span className="skill-chip">HTML5</span>
               <span className="skill-chip">CSS3</span>
