@@ -489,6 +489,34 @@ export default function App() {
           </div>
 
           <div className="project-card reveal" style={{ transitionDelay: '0.2s' }}>
+            <div className="project-emoji screen-only">🔒🚨</div>
+            <div className="project-title">FaceGuard</div>
+            <div className="project-goal screen-only">Goal: Session-based person detection home security</div>
+            <p className="project-desc">
+              An AI-powered home security system running entirely in-browser using WebAssembly. Uses MediaPipe Object Detector to 
+              identify humans from front, side, or back views, initiates warning sound alarms, and streams real-time snapshot 
+              alerts directly to your phone via the ntfy API gateway. Features high-capacity local binary database storage 
+              (IndexedDB) and PWA support.
+            </p>
+            <div className="project-tech">
+              <span>JavaScript</span>
+              <span>MediaPipe</span>
+              <span>IndexedDB</span>
+              <span>ntfy API</span>
+              <span>Web Audio API</span>
+              <span>Vite</span>
+            </div>
+            <div className="project-links screen-only">
+              <a href="https://github.com/SameerJoshi7/face-guard" target="_blank" className="project-link" id="faceGuardGithub">
+                View Repo &rarr;
+              </a>
+              <a href="https://SameerJoshi7.github.io/face-guard/" target="_blank" className="project-link" id="faceGuardApp">
+                Launch App &rarr;
+              </a>
+            </div>
+          </div>
+
+          <div className="project-card reveal" style={{ transitionDelay: '0.3s' }}>
             <div className="project-emoji screen-only">🤖💌</div>
             <div className="project-title">FutureMe AI</div>
             <div className="project-goal screen-only">Goal: AI-powered self-reflection journal</div>
