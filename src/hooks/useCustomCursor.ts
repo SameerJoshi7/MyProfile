@@ -5,6 +5,7 @@ export function useCustomCursor() {
     const dot = document.getElementById('cursorDot');
     const ring = document.getElementById('cursorRing');
     let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+    let lastMouseX = 0;
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseX = e.clientX;
@@ -12,6 +13,13 @@ export function useCustomCursor() {
       if (dot) {
         dot.style.left = mouseX + 'px';
         dot.style.top = mouseY + 'px';
+        
+        if (mouseX < lastMouseX) {
+          dot.classList.add('running-left');
+        } else if (mouseX > lastMouseX) {
+          dot.classList.remove('running-left');
+        }
+        lastMouseX = mouseX;
       }
     };
 
