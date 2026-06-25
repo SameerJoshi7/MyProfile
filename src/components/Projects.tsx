@@ -15,19 +15,16 @@ export default function Projects() {
           <div className="project-title">Krishna Bodha</div>
           <div className="project-goal screen-only">Goal: Immersive daily Gita wisdom &amp; AI guidance</div>
           <p className="project-desc">
-            A premium, full-stack spiritual companion delivering daily Bhagavad Gita shlokas and AI reflections at 6:00 AM. 
-            Features the flagship "Seek Divine Guidance" module, which matches modern life challenges or emotional states 
-            to ancient wisdom with personalized AI counseling in English, Hindi, Kannada, or Telugu. Includes an immersive 
-            floating glassmorphic classical flute player, deep-linked verse routing, and multi-channel broadcasts via email 
-            and web push notifications.
+            A premium, full-stack spiritual companion delivering daily Bhagavad Gita shlokas. 
+            Features the flagship "Seek Divine Guidance" module, which provides personalized AI counseling powered by the Gemini API across four languages. 
+            Includes a custom-built responsive audio player with ElevenLabs text-to-speech integration, MongoDB query analytics, deep-linked verse routing, and automated broadcasts via email and web push notifications.
           </p>
           <div className="project-tech">
             <span>React</span>
             <span>Node.js</span>
-            <span>Express</span>
-            <span>TypeScript</span>
+            <span>MongoDB</span>
             <span>Gemini API</span>
-            <span>EmailJS</span>
+            <span>ElevenLabs TTS</span>
             <span>Web Push</span>
           </div>
           <div className="project-links screen-only">
