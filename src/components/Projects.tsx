@@ -15,8 +15,8 @@ export default function Projects() {
           <div className="project-title">Krishna Bodha</div>
           <div className="project-goal screen-only">Goal: Immersive daily Gita wisdom &amp; AI guidance</div>
           <p className="project-desc">
-            A premium, full-stack spiritual companion delivering daily Bhagavad Gita shlokas. 
-            Features the flagship "Seek Divine Guidance" module, which provides personalized AI counseling powered by the Gemini API across four languages. 
+            A premium, full-stack spiritual companion delivering daily Bhagavad Gita shlokas.
+            Features the flagship "Seek Divine Guidance" module, which provides personalized AI counseling powered by the Gemini API across four languages.
             Includes MongoDB query analytics, deep-linked verse routing, and automated broadcasts via email and web push notifications.
           </p>
           <div className="project-tech">
@@ -31,7 +31,7 @@ export default function Projects() {
             <a href="https://github.com/SameerJoshi7/GitaDaily" target="_blank" className="project-link" id="gitaDailyGithub">
               View Repo &rarr;
             </a>
-            <a href="https://gita-daily-lake.vercel.app/" target="_blank" className="project-link" id="gitaDailyApp">
+            <a href="https://krishnabodha.vercel.app/" target="_blank" className="project-link" id="gitaDailyApp">
               Launch App &rarr;
             </a>
           </div>
@@ -68,9 +68,9 @@ export default function Projects() {
           <div className="project-title">FaceGuard</div>
           <div className="project-goal screen-only">Goal: Session-based person detection home security</div>
           <p className="project-desc">
-            An AI-powered home security system running entirely in-browser using WebAssembly. Uses MediaPipe Object Detector to 
-            identify humans from front, side, or back views, initiates warning sound alarms, and streams real-time snapshot 
-            alerts directly to your phone via the ntfy API gateway. Features high-capacity local binary database storage 
+            An AI-powered home security system running entirely in-browser using WebAssembly. Uses MediaPipe Object Detector to
+            identify humans from front, side, or back views, initiates warning sound alarms, and streams real-time snapshot
+            alerts directly to your phone via the ntfy API gateway. Features high-capacity local binary database storage
             (IndexedDB) and PWA support.
           </p>
           <div className="project-tech">
