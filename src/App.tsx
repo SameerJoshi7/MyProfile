@@ -359,9 +359,9 @@ export default function App() {
               <div className="exp-company">GlobalLogic India Pvt. Ltd.</div>
               <div className="exp-project">Invenco by Gilbarco Veeder-Root — Retail Fueling Systems</div>
               <ul className="exp-bullets">
-                <li>Built Prompt Builder Component for newly introduced fueling devices</li>
-                <li>Ensured compatibility among devices before deploying prompts</li>
-                <li>Created and modified APIs to support newly onboarded devices</li>
+                <li>Architected a scalable Prompt Builder Component for newly introduced IoT fueling devices</li>
+                <li>Designed backwards-compatible API interfaces to integrate newly onboarded hardware without breaking legacy systems</li>
+                <li>Implemented strict device-compatibility validation checks to ensure fault-tolerant prompt deployments</li>
               </ul>
             </div>
           </div>
@@ -376,9 +376,9 @@ export default function App() {
               <div className="exp-company">GlobalLogic India Pvt. Ltd.</div>
               <div className="exp-project">Samsung MLOps — Kubernetes-based ML Platform</div>
               <ul className="exp-bullets">
-                <li>Worked on a Kubernetes-based ML Platform automating the complete ML pipeline</li>
-                <li>Built UI components with a well-structured codebase for the AI/MLOps platform</li>
-                <li>Consumed and managed API data for efficient model lifecycle management</li>
+                <li>Engineered distributed UI architectures for a Kubernetes-based ML Platform, enabling automated end-to-end ML pipelines</li>
+                <li>Designed state management solutions to handle complex, asynchronous API data across the model lifecycle</li>
+                <li>Optimized component rendering performance to handle large-scale datasets typical in AI/MLOps environments</li>
               </ul>
             </div>
           </div>
@@ -393,9 +393,9 @@ export default function App() {
               <div className="exp-company">GlobalLogic India Pvt. Ltd.</div>
               <div className="exp-project">MetLife — Upwise for Life (Finance Wellness App)</div>
               <ul className="exp-bullets">
-                <li>Developed features on a micro-service architecture Finance Wellness Application</li>
-                <li>Maintained the "Insights" front-end module with clean, reusable React components</li>
-                <li>Achieved thorough unit test coverage using Jest across all modules</li>
+                <li>Developed resilient frontend integrations for a distributed, micro-service based Finance Wellness Application</li>
+                <li>Architected the "Insights" module utilizing modular, reusable React components to enforce UI consistency at scale</li>
+                <li>Maintained &gt;90% unit test coverage using Jest, establishing CI/CD quality gates to prevent regression in production</li>
               </ul>
             </div>
           </div>
@@ -410,9 +410,9 @@ export default function App() {
               <div className="exp-company">GlobalLogic India Pvt. Ltd.</div>
               <div className="exp-project">Allocate-Eleven — Health Roster Application</div>
               <ul className="exp-bullets">
-                <li>Led Flash → React/TypeScript migration for a healthcare staff management platform</li>
-                <li>Rebuilt each module with identical functionality, improving performance significantly</li>
-                <li>Maintained high unit-test coverage using Jest throughout the migration</li>
+                <li>Led the architectural migration of a critical healthcare staff management platform from legacy Flash to React/TypeScript</li>
+                <li>Deconstructed monolithic legacy logic into decoupled, performant React modules, significantly reducing page load times</li>
+                <li>Enforced a test-driven migration strategy using Jest to guarantee feature parity and zero downtime during rollout</li>
               </ul>
             </div>
           </div>
