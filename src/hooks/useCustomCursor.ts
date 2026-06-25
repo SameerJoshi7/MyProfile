@@ -4,40 +4,39 @@ export function useCustomCursor() {
   useEffect(() => {
     const dot = document.getElementById('cursorDot');
     const ring = document.getElementById('cursorRing');
-    let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-    let lastMouseX = 0;
+    
+    let mouseX = -100;
+    let mouseY = -100;
+    let ringX = -100;
+    let ringY = -100;
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
+    };
+
+    document.addEventListener('mousemove', handleMouseMove, { passive: true });
+
+    let animFrame: number;
+    const render = () => {
+      // Ring follows smoothly with easing
+      ringX += (mouseX - ringX) * 0.2;
+      ringY += (mouseY - ringY) * 0.2;
+
       if (dot) {
-        dot.style.left = mouseX + 'px';
-        dot.style.top = mouseY + 'px';
-        
-        if (mouseX < lastMouseX) {
-          dot.classList.add('running-left');
-        } else if (mouseX > lastMouseX) {
-          dot.classList.remove('running-left');
-        }
-        lastMouseX = mouseX;
+        // Dot tracks mouse instantly on the GPU
+        dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
       }
-    };
-
-    document.addEventListener('mousemove', handleMouseMove);
-
-    let ringAnimFrame: number;
-    const animateRing = () => {
-      ringX += (mouseX - ringX) * 0.12;
-      ringY += (mouseY - ringY) * 0.12;
       if (ring) {
-        ring.style.left = ringX + 'px';
-        ring.style.top = ringY + 'px';
+        // Ring trails slightly behind on the GPU
+        ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
       }
-      ringAnimFrame = requestAnimationFrame(animateRing);
+      
+      animFrame = requestAnimationFrame(render);
     };
-    animateRing();
+    render();
 
-    const interactiveElements = document.querySelectorAll('a, button, .skill-chip, .stat-card, .award-card, .exp-card');
+    const interactiveElements = document.querySelectorAll('a, button, .skill-chip, .stat-card, .award-card, .exp-card, .project-card');
     const addHoverClass = () => ring?.classList.add('hover');
     const removeHoverClass = () => ring?.classList.remove('hover');
 
@@ -48,7 +47,7 @@ export function useCustomCursor() {
 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
-      cancelAnimationFrame(ringAnimFrame);
+      cancelAnimationFrame(animFrame);
       interactiveElements.forEach(el => {
         el.removeEventListener('mouseenter', addHoverClass);
         el.removeEventListener('mouseleave', removeHoverClass);
