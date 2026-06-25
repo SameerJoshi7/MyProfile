@@ -453,6 +453,9 @@ export default function App() {
               <span>Web Push</span>
             </div>
             <div className="project-links screen-only">
+              <a href="https://github.com/SameerJoshi7/GitaDaily" target="_blank" className="project-link" id="gitaDailyGithub">
+                View Repo &rarr;
+              </a>
               <a href="https://gita-daily-lake.vercel.app/" target="_blank" className="project-link" id="gitaDailyApp">
                 Launch App &rarr;
               </a>
@@ -476,6 +479,9 @@ export default function App() {
               <span>Vite</span>
             </div>
             <div className="project-links screen-only">
+              <a href="https://github.com/SameerJoshi7/glow-finger-draw" target="_blank" className="project-link" id="glowFingerDrawGithub">
+                View Repo &rarr;
+              </a>
               <a href="https://SameerJoshi7.github.io/glow-finger-draw/" target="_blank" className="project-link" id="glowFingerDrawApp">
                 Launch App &rarr;
               </a>
@@ -501,6 +507,9 @@ export default function App() {
               <span>Vite</span>
             </div>
             <div className="project-links screen-only">
+              <a href="https://github.com/SameerJoshi7/face-guard" target="_blank" className="project-link" id="faceGuardGithub">
+                View Repo &rarr;
+              </a>
               <a href="https://SameerJoshi7.github.io/face-guard/" target="_blank" className="project-link" id="faceGuardApp">
                 Launch App &rarr;
               </a>
@@ -523,7 +532,9 @@ export default function App() {
               <span>Gemini API</span>
               <span>HTML/CSS/JS</span>
             </div>
-
+            <a href="https://github.com/SameerJoshi7/futureme" target="_blank" className="project-link screen-only" id="futureMeGithub">
+              Coming Soon &rarr;
+            </a>
           </div>
         </div>
       </section>
