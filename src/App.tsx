@@ -3,6 +3,9 @@ import { useStarField } from './hooks/useStarField';
 import { useTypewriter } from './hooks/useTypewriter';
 import { useScrollReveal } from './hooks/useScrollReveal';
 import { useNavbarScroll } from './hooks/useNavbarScroll';
+import { useScrollSpy } from './hooks/useScrollSpy';
+import { use3DTilt } from './hooks/use3DTilt';
+import { useMagneticButtons } from './hooks/useMagneticButtons';
 
 import PrintHeader from './components/PrintHeader';
 import Navigation from './components/Navigation';
@@ -21,6 +24,9 @@ export default function App() {
   useTypewriter();
   useScrollReveal();
   useNavbarScroll();
+  useScrollSpy();
+  use3DTilt();
+  useMagneticButtons();
 
   return (
     <>
