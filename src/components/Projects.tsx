@@ -17,14 +17,14 @@ export default function Projects() {
           <p className="project-desc">
             A premium, full-stack spiritual companion delivering daily Bhagavad Gita shlokas. 
             Features the flagship "Seek Divine Guidance" module, which provides personalized AI counseling powered by the Gemini API across four languages. 
-            Includes a custom-built responsive audio player with ElevenLabs text-to-speech integration, MongoDB query analytics, deep-linked verse routing, and automated broadcasts via email and web push notifications.
+            Includes MongoDB query analytics, deep-linked verse routing, and automated broadcasts via email and web push notifications.
           </p>
           <div className="project-tech">
             <span>React</span>
             <span>Node.js</span>
             <span>MongoDB</span>
             <span>Gemini API</span>
-            <span>ElevenLabs TTS</span>
+            <span>Express</span>
             <span>Web Push</span>
           </div>
           <div className="project-links screen-only">
