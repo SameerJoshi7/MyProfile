@@ -453,9 +453,7 @@ export default function App() {
               <span>Web Push</span>
             </div>
             <div className="project-links screen-only">
-              <a href="https://github.com/SameerJoshi7/GitaDaily" target="_blank" className="project-link" id="gitaDailyGithub">
-                View Repo &rarr;
-              </a>
+
               <a href="https://gita-daily-lake.vercel.app/" target="_blank" className="project-link" id="gitaDailyApp">
                 Launch App &rarr;
               </a>
