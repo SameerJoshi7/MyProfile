@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import sameerPortrait from '../sameer_portrait.jpg';
 
 export default function Hero() {
+  const [imgLoaded, setImgLoaded] = useState(false);
   return (
     <section id="hero">
       <div className="blob blob-1"></div>
@@ -42,7 +44,14 @@ export default function Hero() {
           <div className="photo-container">
             <div className="photo-glow-ring"></div>
             <div className="photo-border">
-              <img src={`${sameerPortrait}?v=1`} alt="Sameer Kumar Joshi" className="photo-img" id="heroPhoto" />
+              {!imgLoaded && <div className="skeleton-loader"></div>}
+              <img 
+                src={`${sameerPortrait}?v=1`} 
+                alt="Sameer Kumar Joshi" 
+                className={`photo-img ${imgLoaded ? 'loaded' : 'loading'}`} 
+                id="heroPhoto" 
+                onLoad={() => setImgLoaded(true)}
+              />
             </div>
             <div className="photo-float-tag tag1">
               <span className="tag-icon">⚡</span>
