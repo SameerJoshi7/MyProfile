@@ -15,7 +15,7 @@ export default function Education() {
             <div className="edu-degree">Bachelor of Technology (B.Tech) in Computer Science &amp; Engineering</div>
             <div className="edu-period">2014 – 2018</div>
           </div>
-          <div className="edu-school">Visvesvaraya Technological University (VTU)</div>
+          <div className="edu-school">Jayaprakash Narayan College of Engineering - Mahabubnagar, Telangana</div>
           <p className="edu-details">
             Graduated with First Class Distinction. Formed core foundations in Software Architecture, Distributed
             Systems, Database Management, and Data Structures &amp; Algorithms.
