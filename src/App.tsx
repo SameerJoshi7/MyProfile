@@ -15,6 +15,7 @@ import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Achievements from './components/Achievements';
+import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -47,6 +48,8 @@ export default function App() {
       <Projects />
       <div className="section-divider"></div>
       <Achievements />
+      <div className="section-divider"></div>
+      <Education />
       <div className="section-divider"></div>
       <Contact />
       <Footer />

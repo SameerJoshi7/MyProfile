@@ -8,6 +8,7 @@ export default function Navigation() {
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#achievements">Awards</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
         <li>
           <button onClick={() => window.print()} className="nav-pdf-btn" id="downloadPdfNav">
