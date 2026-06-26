@@ -17,7 +17,7 @@ export default function Education() {
           </div>
           <div className="edu-school">Jayaprakash Narayan College of Engineering - Mahabubnagar, Telangana</div>
           <p className="edu-details">
-            Graduated with First Class Distinction. Formed core foundations in Software Architecture, Distributed
+            Graduated with a 6.8 GPA. Formed core foundations in Software Architecture, Distributed
             Systems, Database Management, and Data Structures &amp; Algorithms.
           </p>
         </div>
