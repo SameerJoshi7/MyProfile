@@ -34,7 +34,7 @@ export default function Projects() {
             <a href="https://github.com/SameerJoshi7/GitaDaily" target="_blank" className="project-link" id="gitaDailyGithub">
               View Repo &rarr;
             </a>
-            <a href="https://krishnabodha.vercel.app/" target="_blank" className="project-link" id="gitaDailyApp">
+            <a href="https://krishnabodha.in/" target="_blank" className="project-link" id="gitaDailyApp">
               Launch App &rarr;
             </a>
           </div>
