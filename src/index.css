@@ -819,6 +819,45 @@ section {
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
 }
 
+.exp-company-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.exp-company-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--violet-soft);
+}
+
+.exp-period-total {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.exp-role-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.exp-role-group:last-child {
+  margin-bottom: 0;
+}
+
+.exp-role-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 1.5rem 0;
+}
+
 .exp-header {
   display: flex;
   justify-content: space-between;
