@@ -71,7 +71,6 @@ export default function Experience() {
               <div className="exp-project">Allocate-Eleven — Health Roster Application</div>
               <ul className="exp-bullets">
                 <li>Led the architectural migration of a critical healthcare platform used by 50+ hospitals from legacy Flash to React/TypeScript</li>
-                <li>Deconstructed monolithic legacy logic into 60+ decoupled React modules, reducing average page load times from 6s to under 1.5s</li>
                 <li>Enforced a test-driven migration strategy, ensuring 100% feature parity and achieving zero downtime during the global rollout</li>
               </ul>
             </div>

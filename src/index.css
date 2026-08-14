@@ -25,6 +25,27 @@
   --text-dim: #64748b;
   --radius: 1rem;
   --radius-lg: 1.5rem;
+  --scroll-progress: 0%;
+}
+
+[data-theme="alternate"] {
+  --violet: #10b981; /* Emerald Green */
+  --violet-soft: #34d399;
+  --violet-glow: rgba(16, 185, 129, 0.35);
+  --cyan: #fbbf24; /* Amber/Gold */
+  --cyan-soft: #fcd34d;
+  --cyan-glow: rgba(251, 191, 36, 0.3);
+}
+
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--violet), var(--cyan));
+  width: var(--scroll-progress);
+  z-index: 9999;
+  transition: width 0.1s ease;
 }
 
 html {
@@ -139,6 +160,23 @@ nav {
 .nav-links a:hover::after,
 .nav-links a.active::after {
   transform: scaleX(1);
+}
+
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.4rem 0.8rem;
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 10px var(--cyan-glow);
 }
 
 /* HERO */
@@ -924,6 +962,38 @@ section {
   position: relative;
 }
 
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.5rem 1.2rem;
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.filter-btn:hover {
+  border-color: rgba(124, 58, 237, 0.4);
+  color: var(--text);
+}
+
+.filter-btn.active {
+  background: rgba(124, 58, 237, 0.1);
+  border-color: var(--violet);
+  color: var(--violet-soft);
+  box-shadow: 0 0 15px var(--violet-glow);
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1259,30 +1329,37 @@ section {
   font-weight: 300;
 }
 
-.contact-links {
+.contact-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.contact-links-col {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .contact-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.85rem 1.5rem;
-  border-radius: 100px;
+  gap: 0.8rem;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
   transition: all 0.3s;
   border: 1px solid var(--border);
   color: var(--text);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--surface);
 }
 
 .contact-link:hover {
-  transform: translateY(-3px);
+  transform: translateX(6px);
   background: rgba(124, 58, 237, 0.15);
   border-color: var(--violet);
   box-shadow: 0 0 24px var(--violet-glow);
@@ -1290,7 +1367,46 @@ section {
 }
 
 .contact-link-icon {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 15px var(--cyan-glow);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.submit-btn {
+  align-self: flex-start;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
 }
 
 /* FOOTER */
@@ -1442,39 +1558,49 @@ footer span {
 }
 
 @media print {
+  /* ===================================================
+     HIGH-SCORE RESUME PRINT STYLESHEET
+     Design: Clean, ATS-friendly, 2-page A4 layout
+     Accent: Indigo (#4338ca) for headings & dates
+     Font: Inter body, Outfit headings
+     =================================================== */
+
+  /* === PAGE SETUP === */
+  @page {
+    size: A4 portrait;
+    margin: 1.2cm 1.5cm;
+  }
+
+  /* === ROOT COLOR OVERRIDES === */
   :root {
     --bg: #ffffff !important;
     --bg2: #ffffff !important;
-    --surface: rgba(0, 0, 0, 0.02) !important;
-    --border: rgba(0, 0, 0, 0.08) !important;
-    --text: #0f172a !important; /* slate-900 */
-    --text-muted: #334155 !important; /* slate-700 */
-    --text-dim: #475569 !important; /* slate-600 */
-    --cyan: #0891b2 !important; /* cyan-600 */
-    --cyan-soft: #0e7490 !important; /* cyan-700 */
-    --violet: #6d28d9 !important; /* violet-700 */
-    --violet-soft: #5b21b6 !important; /* violet-800 */
-    --violet-glow: rgba(109, 40, 217, 0.1) !important;
-    --cyan-glow: rgba(8, 145, 178, 0.1) !important;
-    --amber: #b45309 !important; /* amber-700 */
-    --amber-glow: rgba(180, 83, 9, 0.1) !important;
+    --surface: transparent !important;
+    --border: #e2e8f0 !important;
+    --text: #0f172a !important;
+    --text-muted: #334155 !important;
+    --text-dim: #475569 !important;
+    --cyan: #4338ca !important;
+    --cyan-soft: #4338ca !important;
+    --violet: #4338ca !important;
+    --violet-soft: #4338ca !important;
+    --violet-glow: transparent !important;
+    --cyan-glow: transparent !important;
+    --amber: #92400e !important;
+    --amber-glow: transparent !important;
   }
 
-  /* Page Setup & Margins */
-  @page {
-    size: A4 portrait;
-    margin: 1.5cm 1.5cm;
-  }
-
-  /* Reset layout & color scheme for high-fidelity printing */
+  /* === GLOBAL RESET FOR PRINT === */
   html, body {
     background: #ffffff !important;
-    color: #0f172a !important; /* slate-900 */
+    color: #0f172a !important;
     font-family: 'Inter', sans-serif;
-    font-size: 10pt !important;
-    line-height: 1.5 !important;
+    font-size: 9.5pt !important;
+    line-height: 1.45 !important;
     cursor: default !important;
     overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
   * {
@@ -1486,93 +1612,32 @@ footer span {
     animation: none !important;
   }
 
-  /* Hide screen-only components */
+  /* === ELEMENTS TO HIDE === */
   #navbar,
   #hero,
-  .section-divider,
   #contact,
   footer,
+  .section-divider,
   .cursor-dot,
   .cursor-ring,
   .blob,
   .stars,
   .scroll-indicator,
+  .scroll-progress-bar,
   .hero-cta,
   .about-stats,
+  .project-filters,
+  .contact-form,
+  .contact-content-grid,
+  .theme-toggle-btn,
+  .timeline-dot,
   .screen-only {
     display: none !important;
   }
 
-  /* Print Header Styles */
-  .print-header {
+  /* === PRINT-ONLY ELEMENTS VISIBLE === */
+  .print-only {
     display: block !important;
-    margin-bottom: 2rem !important;
-    border-bottom: 2px solid #cbd5e1 !important;
-    padding-bottom: 1.25rem !important;
-  }
-
-  .print-header-top {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: flex-end !important;
-    flex-wrap: wrap !important;
-    margin-bottom: 0.5rem !important;
-  }
-
-  .print-name {
-    font-family: 'Outfit', sans-serif !important;
-    font-size: 24pt !important;
-    font-weight: 800 !important;
-    color: #0f172a !important; /* slate-900 */
-    line-height: 1 !important;
-    margin: 0 !important;
-  }
-
-  .print-title {
-    font-family: 'Outfit', sans-serif !important;
-    font-size: 13pt !important;
-    font-weight: 600 !important;
-    color: #4f46e5 !important; /* Indigo-600 */
-    margin: 0 !important;
-  }
-
-  .print-contact {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 1rem !important;
-    font-size: 9pt !important;
-    color: #475569 !important; /* slate-600 */
-  }
-
-  .print-contact-item {
-    display: inline-flex !important;
-    align-items: center !important;
-  }
-
-  /* Section Commons */
-  section {
-    padding: 0 !important;
-    margin: 0 0 1.75rem 0 !important;
-    max-width: 100% !important;
-  }
-
-  .section-title {
-    font-family: 'Outfit', sans-serif !important;
-    font-size: 14pt !important;
-    font-weight: 700 !important;
-    color: #0f172a !important;
-    border-bottom: 1.5px solid #e2e8f0 !important;
-    padding-bottom: 0.35rem !important;
-    margin-bottom: 0.75rem !important;
-    margin-top: 0 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.05em !important;
-  }
-
-  .section-title span {
-    background: none !important;
-    -webkit-text-fill-color: #0f172a !important;
-    color: #0f172a !important;
   }
 
   .reveal {
@@ -1581,41 +1646,151 @@ footer span {
     transition: none !important;
   }
 
-  /* About / Summary Section */
+  /* =============================================
+     PRINT HEADER — Name, Tagline, Contact Row
+     ============================================= */
+  .print-header {
+    display: block !important;
+    text-align: center !important;
+    margin-bottom: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
+    border-bottom: 2.5px solid #4338ca !important;
+  }
+
+  .print-name {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 26pt !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    line-height: 1.1 !important;
+    margin: 0 0 0.2rem 0 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .print-title {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 10pt !important;
+    font-weight: 500 !important;
+    color: #4338ca !important;
+    margin: 0 0 0.5rem 0 !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  .print-contact {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+    font-size: 8.5pt !important;
+    color: #334155 !important;
+    align-items: center !important;
+  }
+
+  .print-contact-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+  }
+
+  .print-contact-item a {
+    color: #4338ca !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+  }
+
+  .print-divider {
+    color: #cbd5e1 !important;
+    font-weight: 300 !important;
+  }
+
+  /* =============================================
+     SECTION COMMONS
+     ============================================= */
+  section {
+    padding: 0 !important;
+    margin: 0 0 0.9rem 0 !important;
+    max-width: 100% !important;
+  }
+
+  .section-title {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 12pt !important;
+    font-weight: 700 !important;
+    color: #4338ca !important;
+    border-bottom: 1.5px solid #4338ca !important;
+    padding-bottom: 0.2rem !important;
+    margin-bottom: 0.5rem !important;
+    margin-top: 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .section-title span {
+    background: none !important;
+    -webkit-text-fill-color: #4338ca !important;
+    color: #4338ca !important;
+  }
+
+  /* =============================================
+     PROFESSIONAL SUMMARY (About Section)
+     ============================================= */
   .about-grid {
     display: block !important;
     margin-top: 0 !important;
   }
 
+  .target-role {
+    display: block !important;
+    font-size: 9pt !important;
+    font-weight: 600 !important;
+    font-style: italic !important;
+    color: #4338ca !important;
+    margin-bottom: 0.4rem !important;
+    padding-bottom: 0.3rem !important;
+    border-bottom: 1px dashed #e2e8f0 !important;
+  }
+
   .about-text {
-    font-size: 9.5pt !important;
+    font-size: 9pt !important;
     color: #334155 !important;
-    line-height: 1.6 !important;
+    line-height: 1.55 !important;
+    font-weight: 400 !important;
+  }
+
+  .about-text strong {
+    color: #0f172a !important;
+    font-weight: 600 !important;
   }
 
   .about-text p {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .about-text p + p {
+    margin-top: 0.25rem !important;
   }
 
   .about-langs {
-    margin-top: 0.75rem !important;
+    margin-top: 0.4rem !important;
     display: flex !important;
-    gap: 0.5rem !important;
+    gap: 0.4rem !important;
   }
 
   .lang-pill {
     background: #f1f5f9 !important;
     border: 1px solid #e2e8f0 !important;
     color: #475569 !important;
-    padding: 0.15rem 0.6rem !important;
-    font-size: 8pt !important;
+    padding: 0.1rem 0.5rem !important;
+    font-size: 7.5pt !important;
   }
 
-  /* Technical Skills Section */
+  /* =============================================
+     TECHNICAL SKILLS — Compact Grid
+     ============================================= */
   .skills-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1rem !important;
+    gap: 0.5rem !important;
     margin-top: 0 !important;
   }
 
@@ -1627,28 +1802,31 @@ footer span {
   }
 
   .skill-group-title {
-    font-size: 9.5pt !important;
+    font-size: 8.5pt !important;
     font-weight: 700 !important;
     color: #0f172a !important;
-    margin-bottom: 0.35rem !important;
+    margin-bottom: 0.15rem !important;
+    letter-spacing: 0.06em !important;
   }
 
   .skill-chips {
-    gap: 0.4rem !important;
+    gap: 0.25rem !important;
   }
 
   .skill-chip, .skill-chip.cyan, .skill-chip.amber {
     background: #f8fafc !important;
     border: 1px solid #e2e8f0 !important;
     color: #334155 !important;
-    padding: 0.15rem 0.5rem !important;
-    font-size: 8pt !important;
+    padding: 0.1rem 0.4rem !important;
+    font-size: 7.5pt !important;
     font-weight: 500 !important;
     box-shadow: none !important;
     transform: none !important;
   }
 
-  /* Experience Section */
+  /* =============================================
+     PROFESSIONAL EXPERIENCE — Grouped Layout
+     ============================================= */
   .timeline {
     padding-left: 0 !important;
     margin-top: 0 !important;
@@ -1660,7 +1838,7 @@ footer span {
 
   .timeline-item {
     padding-left: 0 !important;
-    margin-bottom: 1.25rem !important;
+    margin-bottom: 0 !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
@@ -1672,123 +1850,223 @@ footer span {
   .exp-card {
     background: none !important;
     border: none !important;
-    padding: 0 !important;
+    border-left: 3px solid #4338ca !important;
+    border-radius: 0 !important;
+    padding: 0 0 0 0.75rem !important;
     backdrop-filter: none !important;
     transform: none !important;
     box-shadow: none !important;
   }
 
+  .exp-card:hover {
+    transform: none !important;
+  }
+
+  /* Company Header */
+  .exp-company-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    margin-bottom: 0.6rem !important;
+    padding-bottom: 0.3rem !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    gap: 0.5rem !important;
+  }
+
+  .exp-company-title {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 12pt !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    margin: 0 !important;
+  }
+
+  .exp-period-total {
+    font-size: 9pt !important;
+    font-weight: 600 !important;
+    color: #4338ca !important;
+    white-space: nowrap !important;
+  }
+
+  /* Role Groups */
+  .exp-role-group {
+    margin-bottom: 0.6rem !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .exp-role-group:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .exp-role-divider {
+    height: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+  }
+
   .exp-header {
     display: flex !important;
     justify-content: space-between !important;
-    align-items: flex-start !important;
-    margin-bottom: 0.15rem !important;
+    align-items: baseline !important;
+    margin-bottom: 0.05rem !important;
+    gap: 0.5rem !important;
   }
 
   .exp-role {
-    font-size: 11pt !important;
+    font-size: 10pt !important;
     font-weight: 700 !important;
     color: #0f172a !important;
   }
 
   .exp-period {
-    font-size: 8.5pt !important;
+    font-size: 8pt !important;
     font-weight: 600 !important;
-    color: #4f46e5 !important; /* Indigo Accent */
+    color: #4338ca !important;
     background: none !important;
     border: none !important;
     padding: 0 !important;
+    white-space: nowrap !important;
   }
 
+  /* Legacy single-entry exp-company (not used in grouped, but kept for safety) */
   .exp-company {
-    font-size: 9.5pt !important;
+    font-size: 9pt !important;
     font-weight: 600 !important;
     color: #334155 !important;
-    margin-bottom: 0.15rem !important;
+    margin-bottom: 0.1rem !important;
   }
 
   .exp-project {
-    font-size: 8.5pt !important;
+    font-size: 8pt !important;
     font-weight: 500 !important;
+    font-style: italic !important;
     color: #64748b !important;
-    margin-bottom: 0.35rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  .exp-bullets {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .exp-bullets li {
-    font-size: 9pt !important;
+    font-size: 8.5pt !important;
     color: #334155 !important;
-    padding: 0.15rem 0 !important;
-    padding-left: 1rem !important;
+    padding: 0.08rem 0 !important;
+    padding-left: 0.9rem !important;
+    position: relative !important;
     line-height: 1.4 !important;
   }
 
   .exp-bullets li::before {
     content: "•" !important;
-    color: #4f46e5 !important;
-    font-size: 11pt !important;
+    color: #4338ca !important;
+    font-size: 10pt !important;
+    position: absolute !important;
     left: 0 !important;
-    top: 0.05rem !important;
+    top: 0 !important;
   }
 
-  /* Projects Section */
+  /* =============================================
+     KEY PROJECTS — 2-Column Compact Grid
+     ============================================= */
   .projects-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1.25rem !important;
-    margin-top: 0 !important;
-  }
-
-  .project-card {
-    background: none !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    gap: 0.25rem !important;
-    page-break-inside: avoid !important;
-    break-inside: avoid !important;
-    backdrop-filter: none !important;
-    overflow: visible !important;
-  }
-
-  .project-title {
-    font-size: 10.5pt !important;
-    font-weight: 700 !important;
-    color: #0f172a !important;
-  }
-
-  .project-desc {
-    font-size: 8.5pt !important;
-    color: #475569 !important;
-    line-height: 1.45 !important;
-    margin-bottom: 0.35rem !important;
-  }
-
-  .project-tech {
-    gap: 0.35rem !important;
-  }
-
-  .project-tech span {
-    background: #f1f5f9 !important;
-    border: 1px solid #e2e8f0 !important;
-    color: #475569 !important;
-    padding: 0.1rem 0.4rem !important;
-    font-size: 7.5pt !important;
-    font-weight: 500 !important;
-  }
-
-  /* Achievements Section */
-  .achievements-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 0.75rem !important;
     margin-top: 0 !important;
   }
 
+  .project-card {
+    background: none !important;
+    border: none !important;
+    border-left: 2px solid #e2e8f0 !important;
+    border-radius: 0 !important;
+    padding: 0 0 0 0.6rem !important;
+    margin: 0 !important;
+    gap: 0.1rem !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    backdrop-filter: none !important;
+    overflow: visible !important;
+  }
+
+  .project-card::before {
+    display: none !important;
+  }
+
+  .project-card:hover {
+    transform: none !important;
+  }
+
+  .project-title {
+    font-size: 9.5pt !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+  }
+
+  .project-desc {
+    font-size: 8pt !important;
+    color: #475569 !important;
+    line-height: 1.35 !important;
+    margin-bottom: 0.15rem !important;
+  }
+
+  .project-bullets {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-top: 0.1rem !important;
+  }
+
+  .project-bullets li {
+    font-size: 8pt !important;
+    color: #475569 !important;
+    padding: 0.06rem 0 !important;
+    padding-left: 0.8rem !important;
+    line-height: 1.35 !important;
+    position: relative !important;
+  }
+
+  .project-bullets li::before {
+    content: "•" !important;
+    color: #4338ca !important;
+    font-size: 9pt !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+  }
+
+  .project-tech {
+    gap: 0.2rem !important;
+    margin-top: 0.1rem !important;
+  }
+
+  .project-tech span {
+    background: #f1f5f9 !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #475569 !important;
+    padding: 0.05rem 0.35rem !important;
+    font-size: 6.5pt !important;
+    font-weight: 500 !important;
+  }
+
+  /* =============================================
+     HONORS & ACHIEVEMENTS — Compact Grid
+     ============================================= */
+  .achievements-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0.5rem !important;
+    margin-top: 0 !important;
+  }
+
   .award-card {
     background: #f8fafc !important;
     border: 1px solid #e2e8f0 !important;
-    border-radius: 6px !important;
-    padding: 0.6rem 0.85rem !important;
+    border-radius: 4px !important;
+    padding: 0.4rem 0.6rem !important;
     text-align: left !important;
     backdrop-filter: none !important;
     page-break-inside: avoid !important;
@@ -1796,42 +2074,25 @@ footer span {
     overflow: visible !important;
   }
 
-  .award-title {
+  .award-icon {
     font-size: 9pt !important;
+  }
+
+  .award-title {
+    font-size: 8pt !important;
     font-weight: 700 !important;
     color: #0f172a !important;
-    margin-bottom: 0.1rem !important;
+    margin-bottom: 0 !important;
   }
 
   .award-sub {
-    font-size: 8pt !important;
+    font-size: 7pt !important;
     color: #64748b !important;
   }
 
-  /* Projects Bullet Lists in Print */
-  .project-bullets {
-    list-style: none !important;
-    padding-left: 0 !important;
-    margin-top: 0.25rem !important;
-  }
-
-  .project-bullets li {
-    font-size: 8.5pt !important;
-    color: #475569 !important;
-    padding: 0.1rem 0 !important;
-    padding-left: 1rem !important;
-    line-height: 1.4 !important;
-  }
-
-  .project-bullets li::before {
-    content: "•" !important;
-    color: #4f46e5 !important;
-    font-size: 11pt !important;
-    left: 0 !important;
-    top: 0.05rem !important;
-  }
-
-  /* Education Section in Print */
+  /* =============================================
+     EDUCATION — Clean Block
+     ============================================= */
   .education-grid {
     display: block !important;
     margin-top: 0 !important;
@@ -1841,7 +2102,7 @@ footer span {
     background: none !important;
     border: none !important;
     padding: 0 !important;
-    margin-bottom: 1rem !important;
+    margin-bottom: 0 !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
@@ -1849,34 +2110,35 @@ footer span {
   .edu-header {
     display: flex !important;
     justify-content: space-between !important;
-    align-items: flex-start !important;
-    margin-bottom: 0.15rem !important;
+    align-items: baseline !important;
+    margin-bottom: 0.05rem !important;
   }
 
   .edu-degree {
-    font-size: 11pt !important;
+    font-size: 10pt !important;
     font-weight: 700 !important;
     color: #0f172a !important;
   }
 
   .edu-period {
-    font-size: 8.5pt !important;
+    font-size: 8pt !important;
     font-weight: 600 !important;
-    color: #4f46e5 !important;
+    color: #4338ca !important;
     background: none !important;
     border: none !important;
     padding: 0 !important;
+    white-space: nowrap !important;
   }
 
   .edu-school {
-    font-size: 9.5pt !important;
+    font-size: 9pt !important;
     font-weight: 600 !important;
     color: #334155 !important;
-    margin-bottom: 0.15rem !important;
+    margin-bottom: 0.1rem !important;
   }
 
   .edu-details {
-    font-size: 9pt !important;
+    font-size: 8.5pt !important;
     color: #334155 !important;
     line-height: 1.4 !important;
   }

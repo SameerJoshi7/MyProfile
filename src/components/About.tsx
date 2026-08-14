@@ -11,6 +11,7 @@ export default function About() {
       <div className="about-grid">
         <div className="reveal">
           <div className="about-text">
+            <p className="print-only target-role">Seeking Senior / Staff Full-Stack Engineer roles in product-driven teams building scalable, user-facing applications.</p>
             <p>
               Hey! I'm <strong>Sameer</strong> — a Senior Full-Stack Engineer from Bengaluru, India.
               I've spent the last 7+ years at <strong>GlobalLogic India Pvt. Ltd.</strong> working on

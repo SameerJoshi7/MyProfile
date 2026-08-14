@@ -6,6 +6,7 @@ import { useNavbarScroll } from './hooks/useNavbarScroll';
 import { useScrollSpy } from './hooks/useScrollSpy';
 import { use3DTilt } from './hooks/use3DTilt';
 import { useMagneticButtons } from './hooks/useMagneticButtons';
+import { useScrollProgress } from './hooks/useScrollProgress';
 
 import PrintHeader from './components/PrintHeader';
 import Navigation from './components/Navigation';
@@ -28,9 +29,11 @@ export default function App() {
   useScrollSpy();
   use3DTilt();
   useMagneticButtons();
+  useScrollProgress();
 
   return (
     <>
+      <div className="scroll-progress-bar"></div>
       {/* Custom cursor elements are required by useCustomCursor hook */}
       <div className="cursor-dot" id="cursorDot"></div>
       <div className="cursor-ring" id="cursorRing"></div>
