@@ -45,7 +45,8 @@
   background: linear-gradient(90deg, var(--violet), var(--cyan));
   width: var(--scroll-progress);
   z-index: 9999;
-  transition: width 0.1s ease;
+  will-change: width;
+  contain: layout style;
 }
 
 html {
@@ -71,6 +72,7 @@ body {
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
+  will-change: transform;
 }
 
 .cursor-ring {
@@ -84,6 +86,7 @@ body {
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
+  will-change: transform;
   transition: width 0.2s ease, height 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
@@ -105,11 +108,9 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  background: rgba(7, 7, 15, 0.6);
+  background: rgba(7, 7, 15, 0.92);
   border-bottom: 1px solid var(--border);
-  transition: all 0.3s;
+  transition: background 0.3s ease;
 }
 
 .nav-logo {
@@ -171,7 +172,7 @@ nav {
   cursor: pointer;
   font-size: 0.8rem;
   font-weight: 600;
-  transition: all 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .theme-toggle-btn:hover {
@@ -193,9 +194,11 @@ nav {
 .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.18;
+  filter: blur(60px);
+  opacity: 0.15;
   animation: blobFloat 8s ease-in-out infinite;
+  will-change: transform;
+  contain: strict;
 }
 
 .blob-1 {
@@ -227,13 +230,13 @@ nav {
 
 @keyframes blobFloat {
   0%, 100% {
-    transform: translate(0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
   }
   33% {
-    transform: translate(30px, -30px) scale(1.05);
+    transform: translate3d(30px, -30px, 0) scale(1.05);
   }
   66% {
-    transform: translate(-20px, 20px) scale(0.95);
+    transform: translate3d(-20px, 20px, 0) scale(0.95);
   }
 }
 
@@ -287,7 +290,6 @@ nav {
   color: var(--cyan);
   font-weight: 500;
   margin-bottom: 1.5rem;
-  backdrop-filter: blur(10px);
 }
 
 .hero-badge .dot {

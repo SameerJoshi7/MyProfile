@@ -5,7 +5,7 @@ export function useStarField() {
     const starsContainer = document.getElementById('stars');
     if (starsContainer) {
       starsContainer.innerHTML = '';
-      for (let i = 0; i < 120; i++) {
+      for (let i = 0; i < 60; i++) {
         const star = document.createElement('div');
         star.className = 'star';
         star.style.left = Math.random() * 100 + '%';
