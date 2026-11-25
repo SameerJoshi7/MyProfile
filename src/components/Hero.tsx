@@ -25,7 +25,7 @@ export default function Hero() {
           </div>
           <p className="hero-desc">
             Senior Full-Stack Developer with <strong>7+ years</strong> of experience crafting scalable web applications.
-            Specializing in React, Next.js, TypeScript &amp; Node.js — turning complex ideas into elegant, performant products.
+            Specializing in React, Next.js, TypeScript, Micro-Frontends &amp; Node.js — turning complex ideas into elegant, performant products.
           </p>
           <div className="hero-cta">
             <a href="#experience" className="btn btn-primary" id="viewWorkBtn">

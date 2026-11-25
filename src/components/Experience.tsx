@@ -25,7 +25,8 @@ export default function Experience() {
               </div>
               <div className="exp-project">Invenco by Gilbarco Veeder-Root — Retail Fueling Systems</div>
               <ul className="exp-bullets">
-                <li>Architected a scalable Prompt Builder Component for 15+ newly introduced IoT fueling devices, reducing deployment time by 40%</li>
+                <li>Architected a scalable Prompt Builder Component using Micro-Frontend (MFE) architecture for 15+ newly introduced IoT fueling devices, reducing deployment time by 40%</li>
+                <li>Collaborated with the frontend team to implement Micro-Frontend (MFE) architecture while migrating the legacy AngularJS codebase to React</li>
                 <li>Designed backwards-compatible API interfaces, seamlessly integrating 10,000+ new hardware units while maintaining 100% legacy system uptime</li>
                 <li>Implemented strict device-compatibility validation checks, achieving a 99.9% fault-tolerant success rate for prompt deployments</li>
               </ul>
@@ -55,7 +56,7 @@ export default function Experience() {
               </div>
               <div className="exp-project">MetLife — Upwise for Life (Finance Wellness App)</div>
               <ul className="exp-bullets">
-                <li>Developed resilient frontend integrations for a micro-service based Finance Wellness App, supporting 500K+ monthly active users</li>
+                <li>Developed micro-frontend modules and resilient microservice integrations for a Finance Wellness App, supporting 500K+ monthly active users</li>
                 <li>Architected the "Insights" module with 40+ reusable React components, accelerating new feature delivery by 25%</li>
                 <li>Maintained &gt;90% unit test coverage using Jest, reducing production bugs by 35% via strict CI/CD quality gates</li>
               </ul>

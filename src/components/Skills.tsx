@@ -19,6 +19,7 @@ export default function Skills() {
             <span className="skill-chip">Redux</span>
             <span className="skill-chip">HTML5</span>
             <span className="skill-chip">CSS3</span>
+            <span className="skill-chip">Micro-Frontends</span>
           </div>
         </div>
         <div className="skill-group reveal" style={{ transitionDelay: '0.1s' }}>

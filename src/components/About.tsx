@@ -23,7 +23,11 @@ export default function About() {
               architecting micro-services.
             </p>
             <p>
-              When I'm not writing code, I love bringing my creative ideas to life, playing or watching cricket 🏏, and capturing moments through photography<span className="screen-only"> — check out my shots on Instagram at <a href="https://instagram.com/sameer.joshi" target="_blank" style={{ color: 'var(--cyan)', textDecoration: 'none' }} id="instagramLink">@sameer.joshi</a></span>. I'm also always up for heading to the mountains or exploring new places 🏔️.
+              <strong>3+ years</strong> of hands-on experience in <strong>Micro-Frontend (MFE)</strong> architecture across enterprise
+              applications, including MetLife and Invenco by Gilbarco Veeder-Root.
+            </p>
+            <p className="screen-only">
+              When I'm not writing code, I love bringing my creative ideas to life, playing or watching cricket 🏏, and capturing moments through photography — check out my shots on Instagram at <a href="https://instagram.com/sameer.joshi" target="_blank" style={{ color: 'var(--cyan)', textDecoration: 'none' }} id="instagramLink">@sameer.joshi</a>. I'm also always up for heading to the mountains or exploring new places 🏔️.
             </p>
           </div>
           <div className="about-langs">

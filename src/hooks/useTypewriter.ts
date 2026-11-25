@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 export function useTypewriter() {
   useEffect(() => {
-    const words = ['Next.js & React Apps 💻', 'Node.js APIs 🛠️', 'Full-Stack Magic ✨', 'Scalable Systems 🚀', 'Clean UIs 🎨'];
+    const words = ['Next.js & React Apps 💻', 'Micro-Frontends 🧩', 'Node.js APIs 🛠️', 'Full-Stack Magic ✨', 'Scalable Systems 🚀', 'Clean UIs 🎨'];
     let wordIdx = 0, charIdx = 0, isDeleting = false;
     const tyEl = document.getElementById('typewriterText');
     let typeTimeout: number;
